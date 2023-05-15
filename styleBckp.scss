@@ -121,28 +121,24 @@ canvas {
 
         .title {
             grid-area: title;
-            justify-self: end;
+            justify-self: start;
             z-index: 1;
 
             margin-right: -12vw;
             margin-left: 3vw;
-
-            h1 {
+            h1{
 
                 font-size: 2rem;
                 font-weight: 800;
                 margin-bottom: 0;
-                max-width:25ch;
             }
-
-            h2 {
+            h2{
 
                 margin-left: 0.5ch;
                 font-size: 1rem;
                 font-weight: 500;
             }
-        }
-
+        } 
         .about-img {
             grid-area: image;
             z-index: 0;
@@ -233,7 +229,7 @@ canvas {
 
 }
 
-.portfolioPage {
+.portfolioPage { 
     height: 100vh;
     display: grid;
     margin: 0 2vw;
@@ -246,7 +242,7 @@ canvas {
     grid-template-areas:
         "main-header main-header "
         "s1 s1 "
-        "s2 s2 ";
+        "s2 s2 " ;
 
     img {
         max-width: 90vw;
@@ -267,116 +263,79 @@ canvas {
     }
 
     .portfolio-item {
-        width: 90%;
-        max-width: 1000px;
+        width: 90%; 
         align-self: center;
-        grid-template-rows: min-content min-content min-content;
-        grid-template-columns: 2fr 1fr;
-        background-color: hsla(0, 0%, 0%, 0.042);
-        padding: 10px;
-        border-radius: 15px;
+        grid-template-rows: min-content min-content min-content 1fr;
+        grid-template-columns: auto auto;
 
-        display: grid;
+        display: grid;  
         justify-items: center;
         justify-self: center;
+        grid-template-areas:
+            "title title"
+            "images sub1"
+            "images sub2"
+            "images details"; 
 
         .item-title {
             grid-area: title;
-            font-size: 1.6rem;
-            font-weight: 600;
-
-            justify-self: center;
-            text-align: center;
-            margin: 0 0;
+            font-size: 2rem;  
+            
+            justify-self: start;
+            text-align: left; 
+            margin: 0 0; 
+        }
+        .subtitle1 { 
+            grid-area: sub1;
+            justify-self: start;
+            font-size: 1.1rem;
+            font-style: italic;
+            font-weight: 100; 
+            margin:5px 0;
+            padding:0 1ch;
         }
 
+        .subtitle2 {
+            justify-self: start;
+            grid-area: sub2;
+            font-size: 1.1rem;
+
+            font-weight: 400; 
+            
+            margin:5px 0;  
+            padding:0 1ch;
+        }
         .item-details {
             grid-area: details;
-            display: grid;
             justify-self: start;
-            align-self: center;
             z-index: 1;
-            margin-bottom: 0px;
-            padding: 0 1ch;
+            margin-bottom: 0px; 
+            padding:0 1ch;
 
-
-            grid-template-rows: min-content min-content min-content;
-            grid-template-columns: 1fr;
-            grid-template-areas:
-                "sub1"
-                "sub2"
-                "description";
-
-            .subtitle1 {
-                grid-area: sub1;
-                justify-self: start;
-                align-self: center;
-                font-size: 1.1rem;
-                font-style: italic;
-                font-weight: 100;
-                margin: 10px 0;
-                padding: 0 1ch;
-            }
-
-            .subtitle2 {
-                justify-self: start;
-
-                align-self: center;
-                grid-area: sub2;
-                font-size: 1.1rem;
-
-                font-weight: 400;
-
-                margin: 10px 0;
-                padding: 0 1ch;
-            }
 
             .description {
-
-                grid-area: description;
                 font-size: 1rem;
 
                 font-weight: 300;
-                padding: 0 1ch;
-                line-height: 1.2rem;
+            padding:0 1ch;
+                line-height: 1.2rem; 
             }
-
         }
 
         .item-image {
             grid-area: images;
-            justify-self: center;
+            justify-self: end;   
 
 
-            img {
-                max-width: 100%;
-                height: auto;
-                max-height: 40vh;
-            }
+            img { 
+                max-height: 30vh;
+            } 
         }
     }
 
 
 }
 
-@media (max-width: 800px) {
-    .portfolio-item {
-        grid-template-areas:
-            "title title"
-            "details details"
-            "images images ";
-    }
-}
-
-@media (min-width: 800px) {
-    .portfolio-item {
-
-        grid-template-areas:
-            "title title"
-            "details images"
-            ". . ";
-    }
-}
 
 ///HOMEPAGE
 .homepage {

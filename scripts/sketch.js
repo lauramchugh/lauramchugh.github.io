@@ -18,9 +18,9 @@ function setup() {
   frameRate(60);
   find = false;
 
-  nemo = new Particle(300, 300,15,14)
+  nemo = new Particle(300, 300,16,18,0)
   for (var i = 0; i < 15; i++) {
-    npcs[i] = new Particle(random(windowWidth), random(windowHeight), 10,8)
+    npcs[i] = new Particle(random(windowWidth), random(windowHeight), 16,10, i)
   }
   frameRate(60);
 }
@@ -38,6 +38,18 @@ function draw() {
     npcs[i].wander();
     npcs[i].update();
     npcs[i].show();
+  }
+  if(score>5){
+
+    textSize(20);
+    fill(0,100);
+    text('Score:'+score,50,windowHeight-50);
+  }
+  if(score==69){
+
+    textSize(20);
+    fill(0,50);
+    text('Score:'+score+' (nice)',50,windowHeight-50);
   }
 }
 function windowResized() {

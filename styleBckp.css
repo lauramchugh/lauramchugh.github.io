@@ -132,8 +132,9 @@ canvas {
 .about .s1 .title {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: title;
-      justify-self: end;
+      justify-self: start;
   z-index: 1;
   margin-right: -12vw;
   margin-left: 3vw;
@@ -143,7 +144,6 @@ canvas {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0;
-  max-width: 25ch;
 }
 
 .about .s1 .title h2 {
@@ -232,12 +232,12 @@ canvas {
 .about .s3 .title {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: title;
   z-index: 1;
   margin-bottom: -25px;
   margin-left: 10vw;
   font-size: 2.5rem;
-  -ms-grid-column-align: start;
       justify-self: start;
 }
 
@@ -304,90 +304,70 @@ canvas {
 
 .portfolioPage .portfolio-item {
   width: 90%;
-  max-width: 1000px;
   -ms-grid-row-align: center;
       align-self: center;
-  -ms-grid-rows: min-content min-content min-content;
-      grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content;
-      grid-template-rows: min-content min-content min-content;
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
-  background-color: rgba(0, 0, 0, 0.042);
-  padding: 10px;
-  border-radius: 15px;
+  -ms-grid-rows: min-content min-content min-content 1fr;
+      grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content 1fr;
+      grid-template-rows: min-content min-content min-content 1fr;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
   display: -ms-grid;
   display: grid;
   justify-items: center;
   -ms-grid-column-align: center;
       justify-self: center;
+      grid-template-areas: "title title" "images sub1" "images sub2" "images details";
 }
 
 .portfolioPage .portfolio-item .item-title {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: title;
-  font-size: 1.6rem;
-  font-weight: 600;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  text-align: center;
+  font-size: 2rem;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  text-align: left;
   margin: 0 0;
 }
 
-.portfolioPage .portfolio-item .item-details {
-  grid-area: details;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-column-align: start;
-      justify-self: start;
-  -ms-grid-row-align: center;
-      align-self: center;
-  z-index: 1;
-  margin-bottom: 0px;
-  padding: 0 1ch;
-  -ms-grid-rows: min-content min-content min-content;
-      grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content;
-      grid-template-rows: min-content min-content min-content;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-      grid-template-areas: "sub1" "sub2" "description";
-}
-
-.portfolioPage .portfolio-item .item-details .subtitle1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
+.portfolioPage .portfolio-item .subtitle1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
   grid-area: sub1;
   -ms-grid-column-align: start;
       justify-self: start;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   font-size: 1.1rem;
   font-style: italic;
   font-weight: 100;
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 0 1ch;
 }
 
-.portfolioPage .portfolio-item .item-details .subtitle2 {
+.portfolioPage .portfolio-item .subtitle2 {
   -ms-grid-column-align: start;
       justify-self: start;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
   grid-area: sub2;
   font-size: 1.1rem;
   font-weight: 400;
-  margin: 10px 0;
+  margin: 5px 0;
+  padding: 0 1ch;
+}
+
+.portfolioPage .portfolio-item .item-details {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: details;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  z-index: 1;
+  margin-bottom: 0px;
   padding: 0 1ch;
 }
 
 .portfolioPage .portfolio-item .item-details .description {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: description;
   font-size: 1rem;
   font-weight: 300;
   padding: 0 1ch;
@@ -395,27 +375,16 @@ canvas {
 }
 
 .portfolioPage .portfolio-item .item-image {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
   grid-area: images;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 .portfolioPage .portfolio-item .item-image img {
-  max-width: 100%;
-  height: auto;
-  max-height: 40vh;
-}
-
-@media (max-width: 800px) {
-  .portfolio-item {
-        grid-template-areas: "title title" "details details" "images images ";
-  }
-}
-
-@media (min-width: 800px) {
-  .portfolio-item {
-        grid-template-areas: "title title" "details images" ". . ";
-  }
+  max-height: 30vh;
 }
 
 .homepage {
@@ -519,4 +488,4 @@ canvas {
   right: -25%;
   bottom: 1%;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styleBckp.css.map */
