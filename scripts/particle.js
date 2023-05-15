@@ -90,7 +90,7 @@ function Particle(x, y, length, maxSize, colour) {
 
     let dn = dist(this.x, this.y, nemo.x, nemo.y);
 
-    if (dn < 10) {
+    if (dn < this.size*1.5) {
       this.goalX = this.x + random(-150, 150);
       this.goalY = this.y + random(-150, 150);
       nemo.c = this.c;
