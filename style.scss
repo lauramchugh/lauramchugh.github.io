@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Overpass', sans-serif; 
 }
 
 .grid-container {
@@ -19,6 +19,7 @@ canvas {
     display: block;
     position: absolute;
     z-index: -1;
+    max-width: 100%;
 }
 .fullbody{
     margin: 0; height: 100%; overflow: hidden;
@@ -240,7 +241,7 @@ canvas {
     display: grid;
     margin: 0 2vw;
     //width:75vw;
-    align-self: center;
+    align-self: center; 
 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content min-content min-content;

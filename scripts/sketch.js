@@ -33,21 +33,26 @@ function draw() {
   nemo.update();
   nemo.show();
 
+  textSize(20);
   for (var i = 0; i < npcs.length; i++) {
 
     npcs[i].wander();
     npcs[i].update();
     npcs[i].show();
   }
-  if(score>5){
+  if(score<5){
 
-    textSize(20);
+    
+    fill(0,map(score,1,5,0,100));
+    text('Score:'+score,50,windowHeight-50);
+  }
+  if(score>=5){
+
     fill(0,100);
     text('Score:'+score,50,windowHeight-50);
   }
   if(score==69){
 
-    textSize(20);
     fill(0,50);
     text('Score:'+score+' (nice)',50,windowHeight-50);
   }
