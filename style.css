@@ -283,7 +283,7 @@ canvas {
   -ms-grid-rows: min-content min-content min-content;
       grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content;
       grid-template-rows: min-content min-content min-content;
-  gap: 2vmax 0px;
+  gap: 35px 0px;
       grid-template-areas: "main-header main-header " "s1 s1 " "s2 s2 ";
 }
 
@@ -338,7 +338,7 @@ canvas {
   -ms-grid-column-align: center;
       justify-self: center;
   text-align: center;
-  margin: 0 0;
+  margin: 0 0px 20px 0px;
 }
 
 .portfolioPage .portfolio-item .item-details {
@@ -364,16 +364,19 @@ canvas {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: sub1;
-  -ms-grid-column-align: start;
-      justify-self: start;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
   font-size: 1.1rem;
   font-style: italic;
   font-weight: 100;
   margin: 10px 0;
   padding: 0 1ch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .portfolioPage .portfolio-item .item-details .subtitle2 {
@@ -410,7 +413,7 @@ canvas {
 .portfolioPage .portfolio-item .item-image img {
   max-width: 100%;
   height: auto;
-  max-height: 40vh;
+  max-height: 400px;
 }
 
 @media (max-width: 800px) {
@@ -423,107 +426,5 @@ canvas {
   .portfolio-item {
         grid-template-areas: "title title" "details images" ". . ";
   }
-}
-
-.homepage {
-  height: 100vh;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-}
-
-.home-header {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-items: center;
-  z-index: 1;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: -1;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: -1;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: min-content min-content 1fr;
-      grid-template-rows: -webkit-min-content -webkit-min-content 1fr;
-      grid-template-rows: min-content min-content 1fr;
-}
-
-.home-header #home-banner {
-  margin-top: 1vh;
-  max-width: 65vw;
-}
-
-.home-header h1 {
-  font-size: 3.1vmin;
-  font-weight: 100;
-  letter-spacing: 0.85ch;
-  line-height: 1ch;
-}
-
-.home-header nav {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.home-header nav ul {
-  list-style: none;
-}
-
-.home-header nav ul li {
-  text-align: center;
-  font-size: 2.5vmax;
-  line-height: 3ch;
-}
-
-.home-header nav ul li a {
-  text-decoration: none;
-}
-
-.homepage-image-bg {
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: -1;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: -1;
-  width: 100vw;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  z-index: 0;
-}
-
-.homepage-image-bg img {
-  max-height: 80vh;
-  max-width: 60vw;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-row-align: end;
-      align-self: end;
-}
-
-.homepage-image-bg #left-identicle {
-  -ms-grid-column-align: start;
-      justify-self: start;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-  position: absolute;
-  bottom: 1%;
-}
-
-.homepage-image-bg #right-identicle {
-  -ms-grid-column-align: end;
-      justify-self: end;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-  position: absolute;
-  right: -25%;
-  bottom: 1%;
 }
 /*# sourceMappingURL=style.css.map */
