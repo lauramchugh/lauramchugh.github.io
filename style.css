@@ -360,6 +360,10 @@ canvas {
       grid-template-areas: "sub1" "sub2" "description";
 }
 
+.portfolioPage .portfolio-item .item-details > * a {
+  color: black;
+}
+
 .portfolioPage .portfolio-item .item-details .subtitle1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
